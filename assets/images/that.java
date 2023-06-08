@@ -1,6 +1,6 @@
-# ToDo App
+# To Do List
 
-This is a Flutter project named "ToDo App" that helps you keep track of your tasks. It provides a simple and intuitive interface for managing your to-do list.
+This is a Flutter project named "To Do List" that helps you keep track of your tasks. It provides a simple and intuitive interface for managing your to-do list.
 
 ## Structure
 
@@ -57,8 +57,7 @@ to_do_list/
 
 Here is a screenshot of the app:
 
-![Screenshot](assets/images/screenshot1.png)
-![Screenshot](assets/images/screenshot2.png)
+![Screenshot](assets/images/screenshot.png)
 
 ## Getting Started
 
