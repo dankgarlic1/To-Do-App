@@ -57,6 +57,7 @@ to_do_list/
 
 Here is a screenshot of the app:
 
+![Screenshot](assets/images/checklist.png)
 ![Screenshot](assets/images/screenshot1.png)
 ![Screenshot](assets/images/screenshot2.png)
 
