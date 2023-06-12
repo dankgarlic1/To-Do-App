@@ -1,3 +1,4 @@
+// ignore_for_file: dead_code, non_constant_identifier_names, sort_child_properties_last, camel_case_types, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:to_do_list/model/todo_work.dart';
@@ -12,8 +13,7 @@ so the relative path is specifying the location of the file relative to the
  */
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
-
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -22,7 +22,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final todos_list = todo.todoList();
-  final todo_controller_addTasks= TextEditingController();
+  final todo_controller_addTasks = TextEditingController();
   /*
   The variable `final_todoList` was added to the code to store the filtered list
   of tasks that will be displayed based on the search functionality.
@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
   This ensures that the UI reflects the updated list of tasks based on the
   search criteria.
    */
-  List<todo>final_todoList=[];
+  List<todo> final_todoList = [];
 
   @override
   void initState() {
@@ -53,8 +53,8 @@ class _HomeState extends State<Home> {
      initState method is also executed, which performs essential initialization
      tasks for the widget's state.
      */
-    // TODO: implement initState
-    final_todoList=todos_list;
+
+    final_todoList = todos_list;
     super.initState();
   }
 
@@ -65,42 +65,42 @@ class _HomeState extends State<Home> {
    The purpose of declaring todos_list as final is to make it a read-only
    variable, meaning its value cannot be changed once assigned. This is often
    used when you have a variable that you don't want to be modified accidentally
-    or unintentionally.
+   or unintentionally.
    */
-  bool isClicked=true;
+  bool isClicked = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
       // backgroundColor: td_BG_Color,
-      backgroundColor: Color.fromRGBO(28, 30, 19,1),
+      backgroundColor: const Color.fromRGBO(28, 30, 19, 1),
       appBar: buildAppBar(context), //refactored it by extract method
       drawer: Drawer(
-        backgroundColor:Color.fromRGBO(28, 30, 19,1),
+        backgroundColor: const Color.fromRGBO(28, 30, 19, 1),
         child: DrawerHeader(
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-          ListTile(
-          leading: const Icon(
-          size: 35,
-            Icons.gavel_sharp,
-            color: Color.fromRGBO(114, 143, 206, 1),
-          ),
-          title: const Text(
-            'I Give Justice',
-            style: TextStyle(
-              color: Color.fromRGBO(114, 143, 206, 1),
-              fontSize: 20,
-            ),
-          ),
-          onTap: () {
-            launch('https://www.youtube.com/shorts/PDc8DN4p3eg');
-          },
-          ),
+              ListTile(
+                leading: const Icon(
+                  size: 35,
+                  Icons.gavel_sharp,
+                  color: Color.fromRGBO(114, 143, 206, 1),
+                ),
+                title: const Text(
+                  'I Give Justice',
+                  style: TextStyle(
+                    color: Color.fromRGBO(114, 143, 206, 1),
+                    fontSize: 20,
+                  ),
+                ),
+                onTap: () {
+                  launch('https://www.youtube.com/shorts/PDc8DN4p3eg');
+                },
+              ),
               ListTile(
                 title: const Text(
-                    'I Drive',
+                  'I Drive',
                   style: TextStyle(
                     fontSize: 20,
                     color: Color.fromRGBO(114, 143, 206, 1),
@@ -108,27 +108,25 @@ class _HomeState extends State<Home> {
                 ),
                 leading: const Icon(
                   size: 35,
-                    Icons.drive_eta,
+                  Icons.drive_eta,
                   color: Color.fromRGBO(114, 143, 206, 1),
-
                 ),
                 onTap: () {
                   launch('https://www.youtube.com/shorts/Jul_Bs_JRRU');
-
                 },
               ),
               ListTile(
                 leading: const Icon(
                   size: 35,
-                    Icons.dangerous_rounded,
+                  Icons.dangerous_rounded,
                   color: Color.fromRGBO(114, 143, 206, 1),
                 ),
                 title: const Text(
-                    'I Fight',
-                style: TextStyle(
-                  color: Color.fromRGBO(114, 143, 206, 1),
-                  fontSize: 20,
-                ),
+                  'I Fight',
+                  style: TextStyle(
+                    color: Color.fromRGBO(114, 143, 206, 1),
+                    fontSize: 20,
+                  ),
                 ),
                 onTap: () {
                   launch('https://www.youtube.com/shorts/Tu6F4xLC26o');
@@ -137,15 +135,15 @@ class _HomeState extends State<Home> {
               ListTile(
                 leading: const Icon(
                   size: 35,
-                    Icons.monetization_on_sharp,
+                  Icons.monetization_on_sharp,
                   color: Color.fromRGBO(114, 143, 206, 1),
                 ),
                 title: const Text(
-                    'I Sell ',
-                style: TextStyle(
-                  color: Color.fromRGBO(114, 143, 206, 1),
-                  fontSize: 20,
-                ),
+                  'I Sell ',
+                  style: TextStyle(
+                    color: Color.fromRGBO(114, 143, 206, 1),
+                    fontSize: 20,
+                  ),
                 ),
                 onTap: () {
                   launch('https://www.youtube.com/shorts/dzTKsyHVM9M');
@@ -154,15 +152,15 @@ class _HomeState extends State<Home> {
               ListTile(
                 leading: const Icon(
                   size: 35,
-                    Icons.color_lens_sharp,
+                  Icons.color_lens_sharp,
                   color: Color.fromRGBO(114, 143, 206, 1),
                 ),
                 title: const Text(
-                    'I am Art',
-                style: TextStyle(
-                  color: Color.fromRGBO(114, 143, 206, 1),
-                  fontSize: 20,
-                ),
+                  'I am Art',
+                  style: TextStyle(
+                    color: Color.fromRGBO(114, 143, 206, 1),
+                    fontSize: 20,
+                  ),
                 ),
                 onTap: () {
                   Navigator.pop(context);
@@ -175,76 +173,72 @@ class _HomeState extends State<Home> {
       ),
       body: Stack(
         children: [
-          Container(
-            child: Column(
-              children: [
-                searchBox(),
-                Expanded(
-                  child: ListView(//list view also adds scrolling functionality
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(
-                          top: 50,
-                          bottom: 20,
-                          left: 15,
-                        ),
-                        child:Row(
-                          children: [
-                            Icon(
-                              Icons.home_outlined,
-                              color: Color.fromRGBO(114, 143, 206, 1),
-                              size: 50,
-
-
-                            ),
-                            Text(
-                              " All Tasks",
-                              style: TextStyle(
-                                color: Color.fromRGBO(114, 143, 206, 1),
-                                fontSize: 38,
-                                fontWeight: FontWeight.w500,
-
-                              ),
-                            ),
-                          ],
-                        ),
+          Column(
+            children: [
+              searchBox(),
+              Expanded(
+                child: ListView(
+                  //list view also adds scrolling functionality
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(
+                        top: 50,
+                        bottom: 20,
+                        left: 15,
                       ),
-                      //Creating a widget for to do task apps, making a file new
-                      // directory called widget
-                      for(todo Todoss in final_todoList.reversed)
-                        /*
-                        final_todoList.reversed returns an iterable that
-                        represents the reversed version of the final_todoList
-                        list. It allows iterating over the elements in reverse
-                        order.
-                        todo Todoss is the loop variable. It represents each
-                        element in the final_todoList list as the loop
-                        progresses. The loop variable Todoss is of type todo,
-                        which seems to be a custom class representing a task.
-                        Inside the loop, a new instance of the to_do_tabs widget
-                        is created, and the corresponding element from the
-                        final_todoList list is passed as the Todos parameter.
-                        This means that for each task in the final_todoList, a
-                        new to_do_tabs widget is created, and the specific data
-                        for that task is displayed.
-                        In summary, this for loop is responsible for creating
-                        multiple instances of the to_do_tabs widget, each
-                        representing a different task from the final_todoList
-                        list. By iterating in reverse order, the tasks will be
-                        displayed in the reverse order of their appearance in
-                        the list.
-                         */
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.home_outlined,
+                            color: Color.fromRGBO(114, 143, 206, 1),
+                            size: 50,
+                          ),
+                          const Text(
+                            " All Tasks",
+                            style: TextStyle(
+                              color: Color.fromRGBO(114, 143, 206, 1),
+                              fontSize: 38,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //Creating a widget for to do task apps, making a file new
+                    // directory called widget
+                    for (todo Todoss in final_todoList.reversed)
+                      /*
+                      final_todoList.reversed returns an iterable that
+                      represents the reversed version of the final_todoList
+                      list. It allows iterating over the elements in reverse
+                      order.
+                      todo Todoss is the loop variable. It represents each
+                      element in the final_todoList list as the loop
+                      progresses. The loop variable Todoss is of type todo,
+                      which seems to be a custom class representing a task.
+                      Inside the loop, a new instance of the to_do_tabs widget
+                      is created, and the corresponding element from the
+                      final_todoList list is passed as the Todos parameter.
+                      This means that for each task in the final_todoList, a
+                      new to_do_tabs widget is created, and the specific data
+                      for that task is displayed.
+                      In summary, this for loop is responsible for creating
+                      multiple instances of the to_do_tabs widget, each
+                      representing a different task from the final_todoList
+                      list. By iterating in reverse order, the tasks will be
+                      displayed in the reverse order of their appearance in
+                      the list.
+                       */
                       to_do_tabs(
                         Todos: Todoss,
                         checkbox_change: checkbox_function,
                         delete_task: delete_function,
-                      ),//first Todos is from for loop and
-                      // other one is from "final todo Todos;" from to_do_tabs file
-                    ],
-                  ),
+                      ), //first Todos is from for loop and
+                    // other one is from "final todo Todos;" from to_do_tabs file
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -252,16 +246,18 @@ class _HomeState extends State<Home> {
               children: [
                 Expanded(
                   child: Container(
-                   margin: const EdgeInsets.only(left: 20,right: 20,bottom: 20),
-                   padding: const EdgeInsets.only(left: 20,right: 20,top: 5,bottom: 5),
-                   decoration: BoxDecoration(
-                     // color: Colors.white,
-                     color: Color.fromRGBO(42, 38, 48, 1),
-                     borderRadius: BorderRadius.circular(15),
-                     border: Border.all(
-                       color: Color.fromRGBO(42, 38, 48, 1),
-                     ),
-                     boxShadow: const [
+                    margin:
+                        const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                    padding: const EdgeInsets.only(
+                        left: 20, right: 20, top: 5, bottom: 5),
+                    decoration: BoxDecoration(
+                      // color: Colors.white,
+                      color: const Color.fromRGBO(42, 38, 48, 1),
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(
+                        color: const Color.fromRGBO(42, 38, 48, 1),
+                      ),
+                      boxShadow: const [
                         BoxShadow(
                           // color: Colors.grey,
                           // color: Color.fromRGBO(42, 38, 48, 1),
@@ -269,15 +265,15 @@ class _HomeState extends State<Home> {
                           offset: Offset(0, 0),
                           blurRadius: 10,
                         ),
-                     ],
-                   ),
+                      ],
+                    ),
                     child: TextField(
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                       ),
                       controller: todo_controller_addTasks,
                       autocorrect: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: "Add your Tasks here...",
                         hintStyle: TextStyle(
                           // color: Colors.white,
@@ -289,26 +285,26 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(right: 20,bottom: 20),
+                  margin: const EdgeInsets.only(right: 20, bottom: 20),
                   // padding: EdgeInsets.,
-                  padding: const EdgeInsets.only(top: 5,bottom: 5),
+                  padding: const EdgeInsets.only(top: 5, bottom: 5),
                   child: ElevatedButton(
-                      onPressed: (){
-                        task_add(todo_controller_addTasks.text);
-                      },
-                      child:  Text(
-                          "+",
-                        style: TextStyle(
-                          fontSize: 40,
-                        ),
+                    onPressed: () {
+                      task_add(todo_controller_addTasks.text);
+                    },
+                    child: const Text(
+                      "+",
+                      style: TextStyle(
+                        fontSize: 40,
                       ),
+                    ),
                     style: ElevatedButton.styleFrom(
-                      primary: tdBlue,
+                      backgroundColor: tdBlue,
                       // primary: Color.fromRGBO(114, 143, 206, 1),
                       // primary: Colors.deepPurple,
 
                       // primary:Color.fromRGBO(114, 143, 206, 1) ,
-                      minimumSize: const Size(60,60),
+                      minimumSize: const Size(60, 60),
                       elevation: 10,
                     ),
                   ),
@@ -322,7 +318,7 @@ class _HomeState extends State<Home> {
   }
 
   //function for checkbox
-  void checkbox_function(todo checkbox_done){
+  void checkbox_function(todo checkbox_done) {
     setState(() {
       checkbox_done.isDone = !checkbox_done.isDone;
       // It means that the isDone
@@ -334,7 +330,7 @@ class _HomeState extends State<Home> {
   }
 
   //function for delete
-  void delete_function(String id){
+  void delete_function(String id) {
     setState(() {
       todos_list.removeWhere((element) => element.id == id);
       /*
@@ -359,43 +355,50 @@ class _HomeState extends State<Home> {
   }
 
   //function for adding tasks
-  void task_add(String todo_addTask){
+  void task_add(String todo_addTask) {
     setState(() {
-      todos_list.add(todo(id: DateTime.now().microsecondsSinceEpoch.toString(), todo_text: todo_addTask));
+      todos_list.add(todo(
+          id: DateTime.now().microsecondsSinceEpoch.toString(),
+          todo_text: todo_addTask));
       //we need unique id for every task so i decided to use timestamp, it
       //records time in MICRO seconds and converts them into string to be used as
       // id
     });
-    todo_controller_addTasks.clear();//when we add the task the text we wrote in
+    todo_controller_addTasks
+        .clear(); //when we add the task the text we wrote in
     //text field should be cleared
   }
+
   //Added a new method search_tasks to perform the search and update the list
   // of displayed tasks:
-  void search_tasks(String keyword_task){
-    List <todo> Results=[];
-    if(keyword_task.isEmpty){
-      Results=todos_list;
-    }
-    else{
-      Results=todos_list.where((element) => element.todo_text!.toLowerCase().contains(keyword_task.toLowerCase())).toList();
+  void search_tasks(String keyword_task) {
+    List<todo> Results = [];
+    if (keyword_task.isEmpty) {
+      Results = todos_list;
+    } else {
+      Results = todos_list
+          .where((element) => element.todo_text!
+              .toLowerCase()
+              .contains(keyword_task.toLowerCase()))
+          .toList();
     }
     setState(() {
-      final_todoList=Results;
+      final_todoList = Results;
     });
   }
 
-Widget searchBox(){
-  return Container(
-    margin: const EdgeInsets.fromLTRB(20, 30, 20, 0),
-    width: double.infinity,
-    height: 45,
-    decoration: BoxDecoration(
-      // color: Colors.white,
-      color: Color.fromRGBO(42, 38, 48, 1),
-      borderRadius: BorderRadius.circular(25),
-    ),
-    child:  TextField(
-      /*
+  Widget searchBox() {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(20, 30, 20, 0),
+      width: double.infinity,
+      height: 45,
+      decoration: BoxDecoration(
+        // color: Colors.white,
+        color: const Color.fromRGBO(42, 38, 48, 1),
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: TextField(
+        /*
       Why it was added:
         The purpose of adding the onChanged callback is to respond to changes in
         the text input of the TextField.
@@ -419,35 +422,33 @@ Widget searchBox(){
         modifies the text, the search_tasks method is called to perform a search
          operation based on the input text.
        */
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      onChanged:(element) => search_tasks(element),
-      decoration: InputDecoration(
-          border: InputBorder.none,//removing black line under search bar
+        style: const TextStyle(
+          color: Colors.white,
+        ),
+        onChanged: (element) => search_tasks(element),
+        decoration: const InputDecoration(
+          border: InputBorder.none, //removing black line under search bar
           prefixIcon: Icon(
             // color: Colors.white,
             color: Color.fromRGBO(114, 143, 206, 1),
             Icons.search,
           ),
-          hintText:"Search your Tasks here ...",
+          hintText: "Search your Tasks here ...",
           hintStyle: TextStyle(
             // color: Colors.white,
             color: Color.fromRGBO(114, 143, 206, 1),
-
           ),
-
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      elevation: 0,//to remove the shadow between appbar and body
-      backgroundColor: Color.fromRGBO(28, 30, 19,1),
+      elevation: 0, //to remove the shadow between appbar and body
+      backgroundColor: const Color.fromRGBO(28, 30, 19, 1),
       leading: IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.menu,
           color: Color.fromRGBO(114, 143, 206, 1),
           size: 35,
@@ -457,8 +458,8 @@ Widget searchBox(){
           _scaffoldKey.currentState?.openDrawer();
         },
       ),
-      title:Row(
-        children:  <Widget> [
+      title: Row(
+        children: <Widget>[
           // Icon(
           //   Icons.menu,
           //   // color: Colors.white,
@@ -466,7 +467,7 @@ Widget searchBox(){
           //   size: 35,
           // ),
 
-          Spacer(),//The Spacer widget will take up any remaining free
+          const Spacer(), //The Spacer widget will take up any remaining free
           // space within its parent container after all other children have
           // been laid out. It effectively divides up the available space
           // between widgets and can be used to create more even or
@@ -499,20 +500,22 @@ Widget searchBox(){
               });
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => enlarge_image()),
+                MaterialPageRoute(builder: (context) => const enlarge_image()),
               );
             },
-            child: isClicked==false || true?  CircleAvatar(
-              radius: 25,
-              backgroundImage:  AssetImage('assets/images/imp.jpeg'),
-            ): Container(),
+            child: isClicked == false || true
+                ? const CircleAvatar(
+                    radius: 25,
+                    backgroundImage: AssetImage('assets/images/imp.jpeg'),
+                  )
+                : Container(),
           ),
-
         ],
       ),
     );
   }
 }
+
 class enlarge_image extends StatefulWidget {
   const enlarge_image({super.key});
 
@@ -537,31 +540,31 @@ class _enlarge_imageState extends State<enlarge_image> {
         //       MaterialPageRoute(builder: (context) => Home()),
         //     );
         //   },
-         child: Column(
-           mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-             // ElevatedButton.icon(
-             //   icon: Image.asset(
-             //     'assets/images/imp.jpeg',
-             //     alignment: Alignment.center,
-             //     width: 300,
-             //     height: 600,
-             //     fit: BoxFit.contain,
-             //   ),
-             //   onPressed: (){
-             //     Navigator.pop(context);
-             //   },
-             //   label: const Text(''),
-             // ),
-             GestureDetector(
-               onTap: () {
-                 Navigator.pop(context);
-               },
-               child: Image.asset('assets/images/imp.jpeg'),
-             ),
-           ],
-         ),
-       //),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // ElevatedButton.icon(
+            //   icon: Image.asset(
+            //     'assets/images/imp.jpeg',
+            //     alignment: Alignment.center,
+            //     width: 300,
+            //     height: 600,
+            //     fit: BoxFit.contain,
+            //   ),
+            //   onPressed: (){
+            //     Navigator.pop(context);
+            //   },
+            //   label: const Text(''),
+            // ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Image.asset('assets/images/imp.jpeg'),
+            ),
+          ],
+        ),
+        //),
       ),
     );
   }
