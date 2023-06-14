@@ -24,7 +24,7 @@ class to_do_tabs extends StatelessWidget {
       ),
       child: ListTile(
         onTap: (){
-          print("baby don't hearn me");
+          // print("baby don't hearn me");
           checkbox_change(Todos);
         },
         leading:  Icon(
@@ -85,6 +85,9 @@ class to_do_tabs extends StatelessWidget {
                 onPressed: () {
                   // print("baby don't hearn me delete");
                   delete_task(Todos.id);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Task Deleted Successfully')),
+                  );
                 },
                 icon: Icon(
                   Icons.delete,

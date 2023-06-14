@@ -358,6 +358,9 @@ class _HomeState extends State<Home> {
 
   //function for adding tasks
   void task_add(String todo_addTask){
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Text added Successfully')),
+    );
     setState(() {
       todos_list.add(todo(id: DateTime.now().microsecondsSinceEpoch.toString(), todo_text: todo_addTask));
       //we need unique id for every task so i decided to use timestamp, it
