@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/model/todo_work.dart';
 import '../constants/color.dart';
+import 'package:flutter/services.dart';
 
 class to_do_tabs extends StatelessWidget {
   final todo Todos;
@@ -56,22 +57,43 @@ class to_do_tabs extends StatelessWidget {
               // icon is checked, will add action later
         ),
         ),
-        trailing: Container(
-          height: 35,
-          width: 35,
-          alignment: Alignment.centerRight,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5.0),
-            color: tdRed,
-          ),
-          child: IconButton(
-            onPressed: (){
-              print("baby don't hearn me delete");
-              delete_task(Todos.id);
-            },
-            icon: Icon(Icons.delete,color: Colors.white,),
-            padding: EdgeInsets.only(bottom: 1.5),
-          ),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              onPressed: () {
+                Clipboard.setData(ClipboardData(text: Todos.todo_text!));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Text copied to clipboard')),
+                );
+              },
+              icon: Icon(
+                Icons.content_copy,
+                color: Colors.white,
+              ),
+              padding: EdgeInsets.only(bottom: 1.5),
+            ),
+            Container(
+              height: 35,
+              width: 35,
+              alignment: Alignment.centerRight,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.0),
+                color: tdRed,
+              ),
+              child: IconButton(
+                onPressed: () {
+                  // print("baby don't hearn me delete");
+                  delete_task(Todos.id);
+                },
+                icon: Icon(
+                  Icons.delete,
+                  color: Colors.white,
+                ),
+                padding: EdgeInsets.only(bottom: 1.5),
+              ),
+            ),
+          ],
         ),
         ),
     );

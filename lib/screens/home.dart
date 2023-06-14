@@ -194,8 +194,6 @@ class _HomeState extends State<Home> {
                               Icons.home_outlined,
                               color: Color.fromRGBO(114, 143, 206, 1),
                               size: 50,
-
-
                             ),
                             Text(
                               " All Tasks",
@@ -387,6 +385,7 @@ class _HomeState extends State<Home> {
 Widget searchBox(){
   return Container(
     margin: const EdgeInsets.fromLTRB(20, 30, 20, 0),
+    padding: const EdgeInsets.only(right: 20),
     width: double.infinity,
     height: 45,
     decoration: BoxDecoration(

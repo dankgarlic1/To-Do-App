@@ -50,6 +50,7 @@ to_do_list/
 - Add, edit, and delete tasks
 - Mark tasks as completed
 - Search for tasks
+- Copy text from tasks
 - User-friendly interface
 - Dark mode support
 
