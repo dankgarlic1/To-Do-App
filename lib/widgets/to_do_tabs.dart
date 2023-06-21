@@ -7,14 +7,19 @@ class to_do_tabs extends StatelessWidget {
   final checkbox_change;
   final delete_task;
 
-  const to_do_tabs({Key? key, required this.Todos,required this.checkbox_change,required this.delete_task,}) : super(key: key);
+  const to_do_tabs({
+    Key? key,
+    required this.Todos,
+    required this.checkbox_change,
+    required this.delete_task,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
         left: 30,
         right: 30,
-        bottom: 20,//added so that multiple to do tabs don't stay joined
+        bottom: 20, //added so that multiple to do tabs don't stay joined
       ),
       decoration: BoxDecoration(
         // color: Colors.white,
@@ -22,17 +27,17 @@ class to_do_tabs extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: ListTile(
-        onTap: (){
-          print("baby don't hearn me");
+        onTap: () {
+          print("A task has been clicked");
           checkbox_change(Todos);
         },
-        leading:  Icon(
-         Todos.isDone?  Icons.check_box:Icons.check_box_outline_blank,
+        leading: Icon(
+          Todos.isDone ? Icons.check_box : Icons.check_box_outline_blank,
           color: tdBlue,
         ),
-        title:Text(
-            Todos.todo_text!,
-            /*
+        title: Text(
+          Todos.todo_text!,
+          /*
             The ! operator is called the "null check operator" or "bang operator"
             in Dart. It is used to assert that a nullable value is not null.
             In the code Todos.todo_text!, todo_text is declared as String?, which
@@ -46,15 +51,15 @@ class to_do_tabs extends StatelessWidget {
             a "null check exception". So, make sure that todo_text is guaranteed
             to have a non-null value before using the ! operator.
              */
-            style: TextStyle(
+          style: TextStyle(
             // color: tdBlack,
-              color: Colors.white,
-            decoration: Todos.isDone? TextDecoration.lineThrough:null,
-              // "?" is if and ":" is else
-              //added line through here so
-              // that it looks task has been done since by default the check box
-              // icon is checked, will add action later
-        ),
+            color: Colors.white,
+            decoration: Todos.isDone ? TextDecoration.lineThrough : null,
+            // "?" is if and ":" is else
+            //added line through here so
+            // that it looks task has been done since by default the check box
+            // icon is checked, will add action later
+          ),
         ),
         trailing: Container(
           height: 35,
@@ -65,15 +70,20 @@ class to_do_tabs extends StatelessWidget {
             color: tdRed,
           ),
           child: IconButton(
-            onPressed: (){
-              print("baby don't hearn me delete");
+            onPressed: () {
+              print("Delete button is clicked");
+              //When you call delete_task(Todos.id) in the IconButton's onPressed callback,
+              //it invokes the delete_function that was passed as the delete_task parameter.
               delete_task(Todos.id);
             },
-            icon: Icon(Icons.delete,color: Colors.white,),
+            icon: Icon(
+              Icons.delete,
+              color: Colors.white,
+            ),
             padding: EdgeInsets.only(bottom: 1.5),
           ),
         ),
-        ),
+      ),
     );
   }
 }

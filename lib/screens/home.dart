@@ -207,6 +207,7 @@ class _HomeState extends State<Home> {
                     //Creating a widget for to do task apps, making a file new
                     // directory called widget
                     for (todo Todoss in final_todoList.reversed)
+
                       /*
                       final_todoList.reversed returns an iterable that
                       represents the reversed version of the final_todoList
@@ -233,7 +234,9 @@ class _HomeState extends State<Home> {
                         Todos: Todoss,
                         checkbox_change: checkbox_function,
                         delete_task: delete_function,
-                      ), //first Todos is from for loop and
+                      )
+
+                    //first Todos is from for loop and
                     // other one is from "final todo Todos;" from to_do_tabs file
                   ],
                 ),
